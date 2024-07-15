@@ -71,6 +71,7 @@ left(90)
 #end 1 window 
 
 #sratr 2 window
+
 penup()
 goto(100, 60)
 pendown()
@@ -91,6 +92,7 @@ forward(50)
 #end 2 window
 
 #window 1
+
 penup()
 goto(50, 90)
 pendown()
@@ -193,5 +195,8 @@ pendown()
 
 left(90)
 forward(50)
+
+
+
 
 exitonclick()
