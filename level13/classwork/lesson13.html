@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ფორმა მომხმარებლის მონაცემების შესატანად</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>მომხმარებლის ფორმა</h1>
+        <form action="submit_form.php" method="post">
+            <div class="form-group">
+                <label for="email">ემაილი:</label>
+                <input type="email" id="email" name="email" required placeholder="შეიყვანეთ თქვენი ემაილი">
+                <!-- 
+                    type="email" - ნიშნავს, რომ input ველი უნდა შეიცავდეს მხოლოდ ვალიდურ ემაილ ფორმატს.
+                    placeholder - აჩვენებს ტექსტს ველზე, სანამ მომხმარებელი არ შეიყვანოს მონაცემები.
+                -->
+            </div>
+            <div class="form-group">
+                <label for="password">პაროლი:</label>
+                <input type="password" id="password" name="password" required placeholder="შეიყვანეთ თქვენი პაროლი">
+                <!-- 
+                    type="password" - ნიშნავს, რომ შეყვანილი ტექსტი იქნება გაწვდილი ვარსკვლავებით ან წერტილებით.
+                    placeholder - აჩვენებს ტექსტს ველზე, სანამ მომხმარებელი არ შეიყვანოს მონაცემები.
+                -->
+            </div>
+            <div class="form-group">
+                <label for="name">სახელი:</label>
+                <input type="text" id="name" name="name" required placeholder="შეიყვანეთ თქვენი სახელი">
+                <!-- 
+                    type="text" - ნიშნავს, რომ input ველი უნდა შეიცავდეს ტექსტურ მონაცემებს.
+                    placeholder - აჩვენებს ტექსტს ველზე, სანამ მომხმარებელი არ შეიყვანოს მონაცემები.
+                -->
+            </div>
+            <div class="form-group">
+                <label for="hobbies">ჰობები:</label>
+                <textarea id="hobbies" name="hobbies" placeholder="მიუთითეთ თქვენი ჰობები (არჩევითი)"></textarea>
+                <!-- 
+                    type - textarea არ საჭიროებს type ატრიბუტს, მაგრამ იყენებს placeholder, რათა აჩვენოს მუხლი, რომელშიც უნდა შეიყვანოს ტექსტი.
+                -->
+            </div>
+            <div class="form-group">
+                <button type="submit">გაგზავნა</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

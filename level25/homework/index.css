@@ -1,0 +1,21 @@
+body {
+    background-color: #f4f4f4; 
+    color: #333; 
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: rgb(70, 130, 180); 
+    color: #fff; 
+    text-align: center;
+    padding: 20px;
+}
+.recipe {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+}
+.recipe h2 {
+    color: rgb(255, 87, 51); 
+}

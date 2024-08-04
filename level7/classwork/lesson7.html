@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photo Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #f0f0f0; 
+            padding: 20px; 
+        }
+        img {
+            max-width: 100%; 
+            height: auto; 
+            border: 2px solid #333; 
+            border-radius: 10px; 
+        }
+        .fallback-text {
+            color: #ff0000; 
+            font-size: 1.5em; 
+        }
+    </style>
+</head>
+<body>
+    <img src="myphoto.jpg" alt="My Photo" onerror="this.style.display='none'; document.getElementById('fallback').style.display='block';">
+    
+    <p id="fallback" class="fallback-text" style="display: none;">
+        სურათის გაწვდვა ვერ მოხერხდა. აქ უნდა ჩანდოს თქვენი ფოტო.
+    </p>
+    
+    <h1>HTML ფორმატირების თეგები</h1>
+    
+    <p><strong>Bold Text:</strong> <strong>ეს ტექსტი გამოკვეთილია.</strong></p>
+    
+    <p><em>Italic Text:</em> <em>ეს ტექსტი მიკრულია.</em></p>
+    
+    <p><u>Underlined Text:</u> <u>ეს ტექსტი ხაზგასმულია.</u></p>
+    
+    <p><del>Strikethrough Text:</del> <del>ეს ტექსტი გადახაზულია.</del></p>
+    
+    <p><a href="https://www.example.com">Hyperlink:</a> <a href="https://www.example.com">ეს არის ჰიპერლინკი.</a></p>
+</body>
+</html>
