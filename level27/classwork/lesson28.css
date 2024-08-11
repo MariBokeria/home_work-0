@@ -1,0 +1,27 @@
+.parent {
+    width: 80%;
+    height: 200px;
+    margin: 20px auto;
+    background-color: lightgrey;
+}
+
+.child {
+    width: 50%;
+    height: 50%;
+    background-color: lightcoral;
+    text-align: center;
+    line-height: 100px; 
+    font-weight: bold;
+}
+
+.parent:nth-child(1) .child {
+    background-color: lightcoral;
+}
+
+.parent:nth-child(2) .child {
+    background-color: lightblue;
+}
+
+.parent:nth-child(3) .child {
+    background-color: lightgreen;
+}
