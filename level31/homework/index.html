@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple City Cards</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card p {
+            margin: 5px 0 0;
+            font-size: 16px;
+        }
+
+        .korea {
+            background-image: url('./images/462c250fdc6ea936b2da4d8726f6aacf.jpg');
+        }
+
+        .tbilisi {
+            background-image: url('./images/ddb7e5ad7e86878edbef5db56e612646.jpg');
+        }
+
+        .newyork {
+            background-image: url('./images/8ef3b3df1c2df6588a0eb73d352fea13.jpg');
+        }
+
+        .paris {
+            background-image: url('./images/34feddf8a34db6f4ed6cbfaac066bab7.jpg');
+        }
+
+        .tokyo {
+            background-image: url('./images/225cfea0030b121651fb8a788467273e.jpg');
+        }
+
+        .dubai {
+            background-image: url('./images/61490d0ce5cbc53e53b7b35ed4ca78e8.jpg');
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card korea">
+        <div>
+            <h2>South Korea</h2>
+            <p>Seoul is very beautiful place</p>
+        </div>
+    </div>
+    <div class="card tbilisi">
+        <div>
+            <h2>Tbilisi</h2>
+            <p>Tbilisi is very beautiful place</p>
+        </div>
+    </div>
+    <div class="card newyork">
+        <div>
+            <h2>New York</h2>
+            <p>New York is very beautiful place</p>
+        </div>
+    </div>
+    <div class="card paris">
+        <div>
+            <h2>Paris</h2>
+            <p>Paris is very beautiful place</p>
+        </div>
+    </div>
+    <div class="card tokyo">
+        <div>
+            <h2>Tokyo</h2>
+            <p>Tokyo is very beautiful place</p>
+        </div>
+    </div>
+    <div class="card dubai">
+        <div>
+            <h2>Dubai</h2>
+            <p>Dubai is very beautiful place</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

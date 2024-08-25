@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Pseudo-Selectors Example</title>
+    <style>
+        /* ფსევდო-სელექტორი, რომელიც მიმართულია უკვე მონახულებულ ლინკზე */
+        a:visited {
+            color: purple; /* მონახულებული ლინკის ფერი */
+        }
+
+        /* ფსევდო-სელექტორი, რომელიც მიმართულია არა მონახულებულ ლინკზე */
+        a:link {
+            color: blue; /* არამონახულებული ლინკის ფერი */
+        }
+
+        /* ფსევდო-სელექტორი, რომელიც მიმართულია ლინკზე მაუსის ჰოვერის დროს */
+        a:hover {
+            color: orange; /* ჰოვერის დროს ლინკის ფერი */
+        }
+
+        /* ფსევდო-სელექტორი, რომელიც მიმართულია ლინკზე აქტივობის დროს (დაწკაპუნების დროს) */
+        a:active {
+            color: red; /* აქტიურ მდგომარეობაში ლინკის ფერი */
+        }
+    </style>
+</head>
+<body>
+    <!-- ლინკი, რომელიც უკვე მონახულებულია -->
+    <a href="https://www.example.com">Visited Link</a>
+    
+    <!-- ლინკი, რომელიც არ არის მონახულებული -->
+    <a href="https://www.newsite.com">Not Visited Link</a>
+</body>
+</html>

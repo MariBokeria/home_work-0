@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #a8c0ff, #3f2b96);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            width: 800px;
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-section {
+            padding: 40px;
+            flex: 1;
+        }
+
+        .form-section:first-child {
+            background-color: #e8f1ff;
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #3f2b96;
+        }
+
+        .form-section:last-child h2 {
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-section:last-child {
+            background-color: #3f2b96;
+            color: white;
+        }
+
+        .form-section:last-child input, .form-section:last-child select {
+            background-color: #4e3d9b;
+            border: none;
+            color: white;
+        }
+
+        .form-section:last-child input[type="checkbox"] {
+            width: auto;
+        }
+
+        .form-group.checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group.checkbox-group label {
+            margin-left: 10px;
+        }
+
+        .submit-button {
+            background-color: white;
+            color: #3f2b96;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-button:hover {
+            background-color: #f0f0f0;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-section">
+        <h2>General Information</h2>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <select id="title">
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Ms.</option>
+                <option>Dr.</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname">
+        </div>
+        <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" id="position">
+        </div>
+        <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company">
+        </div>
+        <div class="form-group">
+            <label for="business-arena">Business Arena</label>
+            <input type="text" id="business-arena">
+        </div>
+        <div class="form-group">
+            <label for="employees">Employees</label>
+            <select id="employees">
+                <option>1-10</option>
+                <option>11-50</option>
+                <option>51-200</option>
+                <option>200+</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-section">
+        <h2>Contact Details</h2>
+        <div class="form-group">
+            <label for="street">Street + Nr.</label>
+            <input type="text" id="street">
+        </div>
+        <div class="form-group">
+            <label for="additional-info">Additional Information</label>
+            <input type="text" id="additional-info">
+        </div>
+        <div class="form-group">
+            <label for="zip-code">Zip Code</label>
+            <input type="text" id="zip-code">
+        </div>
+        <div class="form-group">
+            <label for="place">Place</label>
+            <input type="text" id="place">
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country">
+                <option>Country 1</option>
+                <option>Country 2</option>
+                <option>Country 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phone">Code + Phone Number</label>
+            <input type="text" id="phone">
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email">
+        </div>
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms">
+            <label for="terms">I do accept the <a href="#" style="color: #ffdf40;">Terms and Conditions</a> of your site.</label>
+        </div>
+        <div class="form-group">
+            <button class="submit-button">Register Badge</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
