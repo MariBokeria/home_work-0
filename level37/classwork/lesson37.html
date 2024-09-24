@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #2a9d8f;
+            padding: 10px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5em;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin-left: 20px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+        }
+        @media (max-width: 600px) {
+            ul {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                background-color: #e9c46a;
+                border: none;
+                color: white;
+                font-size: 1.5em;
+                cursor: pointer;
+            }
+
+            .menu-toggle.active + ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="nav-logo">Logo</div>
+        <button class="menu-toggle">☰</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('ul');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>

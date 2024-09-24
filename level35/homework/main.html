@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        /* ძირითადი სტილები */
+        body {
+            margin: 0;
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        header {
+            background-color: #2B3A42;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #F15025;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero {
+            background-color: #1B98E0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            background-color: #212F3C;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner {
+            background-color: #F4D03F;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .extra {
+            background-color: #45B39D;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image {
+            background-color: #D1F2EB;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* მობილურის განლაგება */
+        body {
+            grid-template-areas: 
+                "header"
+                "menu"
+                "hero"
+                "main"
+                "banner"
+                "extra"
+                "image";
+        }
+
+        header, nav, .hero, main, .banner, .extra, .image {
+            height: 100px;
+        }
+
+        /* ტაბლეტის განლაგება */
+        @media (min-width: 600px) {
+            body {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 
+                    "header header"
+                    "hero hero"
+                    "menu main"
+                    "banner banner"
+                    "extra image";
+            }
+        }
+
+        /* დესკტოპის განლაგება */
+        @media (min-width: 1024px) {
+            body {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-areas: 
+                    "header menu menu"
+                    "hero hero hero"
+                    "main main image"
+                    "banner banner banner"
+                    "extra extra image";
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>HEADER</header>
+    <nav>MENU</nav>
+    <div class="hero">HERO</div>
+    <main>MAIN</main>
+    <div class="banner">BANNER</div>
+    <div class="extra">EXTRA</div>
+    <div class="image">IMAGE</div>
+</body>
+</html>

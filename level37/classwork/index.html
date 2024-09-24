@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Background Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white; /* საწყისი ფერი */
+        }
+
+        /* 100px-დან 500px-მდე ეკრანის სიგანეზე ფონი იქნება მწვანე */
+        @media (min-width: 100px) and (max-width: 500px) {
+            body {
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>ფონი იცვლება ეკრანის ზომის მიხედვით</h1>
+</body>
+</html>

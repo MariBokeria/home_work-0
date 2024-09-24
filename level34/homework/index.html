@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color and Height Animation</title>
+    <style>
+        .animated-div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: changeColorAndHeight 4s infinite;
+            animation-delay: 5s;
+        }
+
+        @keyframes changeColorAndHeight {
+            0% {
+                background-color: red;
+                height: 100px;
+            }
+            25% {
+                background-color: blue;
+                height: 150px;
+            }
+            50% {
+                background-color: green;
+                height: 100px;
+            }
+            75% {
+                background-color: yellow;
+                height: 50px;
+            }
+            100% {
+                background-color: red;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="animated-div"></div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Example</title>
+    <style>
+        .card {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .card p {
+            margin: 5px 0 0;
+            font-size: 16px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            grid-gap: 20px; 
+            padding: 20px;
+        }
+
+        .card:nth-child(1) {
+            background: url('./images/shutterstock_1112605595.jpg') no-repeat center center/cover;
+        }
+
+        .card:nth-child(2) {
+            background: url('./images/gyfty.jpg') no-repeat center center/cover;
+        }
+
+        .card:nth-child(3) {
+            background: url('./images/zuh.jpg') no-repeat center center/cover;
+        }
+
+        .card:nth-child(4) {
+            background: url('./images/sahc.jpg') no-repeat center center/cover;
+        }
+
+        .card:nth-child(5) {
+            background: url('./images/images.jpg') no-repeat center center/cover;
+        }
+
+        .card:nth-child(6) {
+            background: url('./images/download.jpg') no-repeat center center/cover;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="card">
+        <div>
+            <h2>South Korea</h2>
+            <p>Seoul is a very beautiful place</p>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <h2>Tbilisi</h2>
+            <p>Tbilisi is a very beautiful place</p>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <h2>New York</h2>
+            <p>New York is a very beautiful place</p>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <h2>Paris</h2>
+            <p>Paris is a very beautiful place</p>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <h2>Tokyo</h2>
+            <p>Tokyo is a very beautiful place</p>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <h2>Dubai</h2>
+            <p>Dubai is a very beautiful place</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

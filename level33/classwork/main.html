@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Icon</title>
+    <style>
+        .notification {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+        }
+        .notification i {
+            font-size: 24px;
+            color: black;
+        }
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="notification">
+    <i>&#128276;</i> 
+    <span class="badge">2</span>
+</div>
+
+</body>
+</html>
