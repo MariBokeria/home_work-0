@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Headers Example</title>
+</head>
+<body>
+
+    <h1 id="header1">ეს არის სათაური 1</h1>
+    <h2 id="header2">ეს არის სათაური 2</h2>
+    <h3 id="header3">ეს არის სათაური 3</h3>
+
+    <script>
+        // h1 ელემენტის მოძებნა და მნიშვნელობის შეცვლა
+        const header1 = document.getElementById("header1");
+        header1.textContent = "შეცვლილი სათაური 1";
+        // h2 ელემენტის მოძებნა და მნიშვნელობის შეცვლა
+        const header2 = document.getElementById("header2");
+        header2.textContent = "შეცვლილი სათაური 2";
+        // h3 ელემენტის მოძებნა და მნიშვნელობის შეცვლა
+        const header3 = document.getElementById("header3");
+        header3.textContent = "შეცვლილი სათაური 3";
+        // ცვლილებების გამოტანა კონსოლში
+        console.log(header1.textContent);
+        console.log(header2.textContent);
+        console.log(header3.textContent);
+    </script>
+
+</body>
+</html>

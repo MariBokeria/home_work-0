@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">ეს არის ტექსტი.</p>
+
+        <script>
+            // ფონის ფერის პირდაპირი ცვლილება
+            const textElement = document.getElementById("text");
+            textElement.style.backgroundColor = "lightblue"; // ფონად მიენიჭება ღია ლურჯი ფერი
+        </script>
+        
+    <p id="styledText">ეს არის სტილიზებული ტექსტი.</p>
+
+        <script>
+            // ტექსტის სტილის ცვლილება პირდაპირ
+            const styledText = document.getElementById("styledText");
+            styledText.style.fontWeight = "bold";  // ტექსტი გახდება სქელი (bold)
+            styledText.style.fontStyle = "italic"; // ასევე გახდება დახრილი (italic)
+        </script>
+
+    <div id="resizable" style="background-color: lightgray; height: 100px;">ეს არის ბლოკი</div>
+
+        <script>
+            // სიგანის ცვლილება პირდაპირ
+            const resizableDiv = document.getElementById("resizable");
+            resizableDiv.style.width = "300px";  // სიგანე შეიცვლება 300px-ად
+        </script>
+        
+    <div id="backgroundImage" style="height: 200px; width: 300px;">ეს არის ბლოკი</div>
+
+        <script>
+            // ფონის სურათის ცვლილება
+            const backgroundDiv = document.getElementById("backgroundImage");
+            backgroundDiv.style.backgroundImage = "url('your-image-url.jpg')"; // ჩასვით სურათის ბმული
+            backgroundDiv.style.backgroundSize = "cover"; // რომ სურათი სრულად დაფაროს ბლოკი
+        </script>
+
+    <p id="textAppender">პირველადი ტექსტი</p>
+
+        <script>
+            // ტექსტის დამატება innerText-ის მეშვეობით
+            const textAppender = document.getElementById("textAppender");
+            textAppender.innerText += " - და დამატებული ტექსტი."; // ამატებს ახალ ტექსტს არსებული ტექსტის ბოლოს
+        </script>
+
+    <button id="increaseNumber">რიცხვის გაზრდა</button>
+        <p id="numberDisplay">რიცხვი: 0</p>
+        
+            <script>
+                let number = 0;
+                const numberDisplay = document.getElementById("numberDisplay");
+            
+                // ღილაკზე დაჭერისას რიცხვის გაზრდა
+                document.getElementById("increaseNumber").addEventListener("click", function() {
+                    number++;  // ზრდის რიცხვს
+                    numberDisplay.innerText = "რიცხვი: " + number;  // განახლებული რიცხვის გამოჩენა
+                });
+            </script>
+
+    <button id="moveBtn">მოძრაობა</button>
+        <div id="movable" style="background-color: lightgreen; width: 100px; height: 100px; position: relative;">მოძრავი ბლოკი</div>
+    
+            <script>
+                let position = 0;  // საწყისი პოზიცია
+                const movableBlock = document.getElementById("movable");
+            
+                // ღილაკზე დაჭერისას ელემენტის გადაადგილება
+                document.getElementById("moveBtn").addEventListener("click", function() {
+                    position += 20;  // მოძრაობის მანძილი
+                    movableBlock.style.left = position + "px";  // გადაადგილება მარცხნიდან მარჯვნივ
+                });
+            </script>
+        
+    <div id="contentContainer">ეს არის საწყისი კონტენტი.</div>
+
+        <script>
+            // კონტენტის შეცვლა innerHTML-ის მეშვეობით
+            const contentContainer = document.getElementById("contentContainer");
+            contentContainer.innerHTML = "<p>ეს არის ახალი კონტენტი, რომელიც დაემატა innerHTML-ის მეშვეობით.</p>";
+        </script>
+    
+    <div id="hiddenElement" style="display: none;">ეს ელემენტი დამალულია</div>
+        <button id="showBtn">გამოჩენა</button>
+
+            <script>
+                // ღილაკზე დაჭერისას დამალული ელემენტის გამოჩენა
+                document.getElementById("showBtn").addEventListener("click", function() {
+                    const hiddenElement = document.getElementById("hiddenElement");
+                    hiddenElement.style.display = "block";  // ელემენტი ხილული ხდება
+                });
+            </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>დავალება</title>
+    <style>
+        #element2 {
+            color: black;
+        }
+        #element3 {
+            color: black;
+            background-color: white;
+        }
+        #element4 {
+            position: static;
+            font-size: 16px;
+        }
+        #element5 div {
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="element1">პირველი ელემენტი</div>
+    <div id="element2">მეორე ელემენტი</div>
+    <div id="element3">მესამე ელემენტი</div>
+    <div id="element4">მეოთხე ელემენტი</div>
+    <div id="element5">
+        <div id="child1">მეხუთე ელემენტი 1</div>
+        <div id="child2">მეხუთე ელემენტი 2</div>
+    </div>
+
+    <script>
+        // პირველი ელემენტისთვის ტექსტის შეცვლა
+        document.getElementById('element1').textContent = 'ტექსტი შეიცვალა!';
+
+        // მეორე ელემენტისთვის ფერის შეცვლა
+        document.getElementById('element2').style.color = 'red';
+
+        // მესამე ელემენტისთვის ფერის და უკანა-ფონის შეცვლა
+        let element3 = document.getElementById('element3');
+        element3.style.color = 'blue';
+        element3.style.backgroundColor = 'yellow';
+
+        // მეოთხე ელემენტისთვის ტექსტის, ზომისა და პოზიციის შეცვლა
+        let element4 = document.getElementById('element4');
+        element4.textContent = 'ტექსტი შეცვლილია!';
+        element4.style.fontSize = '24px';
+        element4.style.position = 'relative';
+        element4.style.left = '50px';
+
+        // მეხუთე ელემენტში შექმენით ორი ელემენტი სხვადასხვა ფერით
+        document.getElementById('child1').style.backgroundColor = 'green';
+        document.getElementById('child2').style.backgroundColor = 'blue';
+    </script>
+</body>
+</html>

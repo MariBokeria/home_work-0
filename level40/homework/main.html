@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explanation Example</title>
+</head>
+<body>
+
+    <h1 id="header1">ეს არის სათაური 1</h1>
+    
+    <script>
+        // DOM (Document Object Model)
+        // DOM არის დოკუმენტის ობიექტის მოდელი, რომელიც წარმოადგენს HTML დოკუმენტს
+        // როგორც ობიექტების სტრუქტურას, სადაც თითოეული ელემენტი არის node (კვანძი).
+        // JavaScript-ის საშუალებით, შესაძლებელია ამ ელემენტებთან ურთიერთობა და მათი მანიპულირება.
+        // getElementById
+        // getElementById არის DOM მეთოდი, რომელიც იღებს ელემენტს მისი უნიკალური 'id' ატრიბუტით.
+        // ამ მეთოდის მეშვეობით ვწვდებით კონკრეტულ ელემენტს და შეგვიძლია შევცვალოთ მისი თვისებები ან ტექსტი.
+        const header1 = document.getElementById("header1");
+        // textContent
+        // textContent არის DOM თვისება, რომელიც გამოიყენება ელემენტის შიგნით არსებული ტექსტის წასაკითხად
+        // ან მის შესაცვლელად. ამ თვისების საშუალებით, შეგვიძლია მივიღოთ ელემენტის ტექსტი ან დავამატოთ/შევცვალოთ ის.
+        header1.textContent = "შეცვლილი სათაური 1"; // h1-ის ტექსტის შეცვლა
+        // ცვლილებების გამოტანა კონსოლში
+        console.log(header1.textContent); // კონსოლში გამოჩნდება 'შეცვლილი სათაური 1'
+    </script>
+
+</body>
+</html>
