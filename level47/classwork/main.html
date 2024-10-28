@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Text App</title>
+    <style>
+        /* საერთო სტილები */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #greeting {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- მისალმება ზემოთა მარჯვენა კუთხეში -->
+    <div id="greeting"></div>
+
+    <!-- შეტყობინების გამოსატანი ადგილი -->
+    <h2 id="message">გთხოვთ შეიყვანოთ ტექსტი</h2>
+
+    <!-- ინფუთი და ღილაკი -->
+    <input type="text" id="textInput" placeholder="შეიყვანეთ ტექსტი">
+    <button onclick="addText()">დამატება</button>
+
+    <script>
+        // მომხმარებლის სახელი გამოვიტანოთ ზემოთა მარჯვენა კუთხეში
+        const userName = prompt("გთხოვთ შეიყვანოთ თქვენი სახელი:");
+        document.getElementById("greeting").textContent = `გამარჯობა, ${userName}`;
+
+        // შეტყობინების ტექსტის დამატების ფუნქცია
+        function addText() {
+            const inputText = document.getElementById("textInput").value;
+            const messageElement = document.getElementById("message");
+
+            if (inputText) {
+                messageElement.textContent += " " + inputText;
+                document.getElementById("textInput").value = ""; // ინფუთი ველის გასუფთავება
+            } else {
+                alert("გთხოვთ, შეიყვანოთ ტექსტი."); // გაფრთხილება ცარიელი ინფუთის შემთხვევაში
+            }
+        }
+    </script>
+</body>
+</html>

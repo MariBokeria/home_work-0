@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        /* აქედან შეგიძლიათ დააკონფიგუროთ ელემენტების ვიზუალი */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #greeting {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        #display {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ზემოთა მარჯვენა კუთხეში გამოსატანი მისალმების ადგილი -->
+    <div id="greeting"></div>
+
+    <!-- საწყისი რიცხვის გამოსატანი -->
+    <div id="display">0</div>
+
+    <!-- რიცხვის შეყვანის ველი -->
+    <input type="number" id="numberInput" placeholder="შეიყვანეთ რიცხვი">
+
+    <!-- ღილაკები ოპერაციებისთვის -->
+    <button onclick="add()">დამატება</button>
+    <button onclick="subtract()">გამოკლება</button>
+    <button onclick="multiply()">გამრავლება</button>
+
+    <script>
+        //  მომხმარებლის სახელის გამოტანა ზემოთა მარჯვენა კუთხეში
+        const userName = prompt("გთხოვთ შეიყვანოთ თქვენი სახელი:");
+        document.getElementById("greeting").textContent = `გამარჯობა, ${userName}`;
+
+        // საწყისი რიცხვი
+        let currentNumber = 0;
+        const display = document.getElementById("display");
+
+        // რიცხვის დამატების ფუნქცია
+        function add() {
+            const inputValue = Number(document.getElementById("numberInput").value);
+            currentNumber += inputValue;
+            display.textContent = currentNumber;
+        }
+
+        // რიცხვის გამოკლების ფუნქცია
+        function subtract() {
+            const inputValue = Number(document.getElementById("numberInput").value);
+            currentNumber -= inputValue;
+            display.textContent = currentNumber;
+        }
+
+        // რიცხვის გამრავლების ფუნქცია
+        function multiply() {
+            const inputValue = Number(document.getElementById("numberInput").value);
+            currentNumber *= inputValue;
+            display.textContent = currentNumber;
+        }
+    </script>
+</body>
+</html>

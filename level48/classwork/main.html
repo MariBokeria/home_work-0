@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Test</title>
+    <style>
+        /* Grandparent ელემენტისთვის ვანიჭებთ display: grid */
+        .grandparent {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        /* უშუალო შვილები განლაგდებიან გრიდის მიხედვით */
+        .parent {
+            background-color: lightcoral;
+            padding: 10px;
+        }
+
+        /* შვილიშვილ ელემენტები */
+        .child {
+            background-color: lightgreen;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grandparent">
+        <!-- შვილები გრიდის შიდა განლაგებაში არიან -->
+        <div class="parent">
+            Parent 1
+            <div class="child">Child 1.1</div>
+            <div class="child">Child 1.2</div>
+        </div>
+        <div class="parent">
+            Parent 2
+            <div class="child">Child 2.1</div>
+            <div class="child">Child 2.2</div>
+        </div>
+    </div>
+
+</body>
+</html>

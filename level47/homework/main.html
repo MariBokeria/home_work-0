@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <style>
+        /* საერთო სტილები */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: grid;
+            gap: 10px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .header {
+            background-color: hotpink;
+            grid-column: span 12;
+            height: 100px;
+        }
+
+        .item {
+            background-color: pink;
+            height: 80px;
+        }
+
+        /* Desktop: 4 სვეტი */
+        @media (min-width: 992px) {
+            .container {
+                grid-template-columns: repeat(12, 1fr);
+            }
+
+            .item:nth-child(-n+4) {
+                grid-column: span 3;
+            }
+        }
+
+        /* Tablet: 3 სვეტი */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .header {
+                grid-column: span 6;
+            }
+
+            .item:nth-child(-n+3) {
+                grid-column: span 2;
+            }
+        }
+
+        /* Mobile: 1 სვეტი */
+        @media (max-width: 767px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                grid-column: span 1;
+            }
+
+            .item {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>
