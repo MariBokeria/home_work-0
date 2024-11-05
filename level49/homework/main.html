@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Shapes for 1257x667</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    padding: 2vw;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .shape {
+    width: 18vw; /* Adjusted to fit 1257x667 */
+    height: 18vw;
+    max-width: 150px;
+    max-height: 150px;
+    margin: auto;
+  }
+
+  .square {
+    background-color: pink;
+  }
+
+  .circle {
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  .rectangle {
+    width: 28vw; /* Adjusted width for rectangle */
+    height: 14vw;
+    background-color: teal;
+    max-width: 200px;
+    max-height: 100px;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 9vw solid transparent;
+    border-right: 9vw solid transparent;
+    border-bottom: 18vw solid skyblue;
+    max-width: 75px;
+    max-height: 150px;
+  }
+
+  .pentagon {
+    width: 0;
+    height: 0;
+    border-bottom: 12vw solid limegreen;
+    border-left: 6vw solid transparent;
+    border-right: 6vw solid transparent;
+    position: relative;
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .pentagon:before {
+    content: "";
+    position: absolute;
+    top: -8vw;
+    left: -6vw;
+    border-left: 8vw solid transparent;
+    border-right: 8vw solid transparent;
+    border-bottom: 8vw solid limegreen;
+    max-width: 75px;
+    max-height: 75px;
+  }
+
+  .oval {
+    width: 24vw;
+    height: 12vw;
+    background-color: peachpuff;
+    border-radius: 50%;
+    max-width: 180px;
+    max-height: 90px;
+  }
+
+  .star {
+    width: 0;
+    height: 0;
+    border-left: 6vw solid transparent;
+    border-right: 6vw solid transparent;
+    border-bottom: 12vw solid lightgray;
+    max-width: 60px;
+    max-height: 120px;
+    position: relative;
+  }
+  .star:before,
+  .star:after {
+    content: "";
+    position: absolute;
+    left: -6vw;
+    top: -4vw;
+    border-left: 6vw solid transparent;
+    border-right: 6vw solid transparent;
+    border-bottom: 12vw solid lightgray;
+    transform: rotate(72deg);
+    max-width: 60px;
+    max-height: 120px;
+  }
+  .star:after {
+    transform: rotate(-72deg);
+  }
+
+  .crescent {
+    width: 18vw;
+    height: 18vw;
+    background-color: coral;
+    border-radius: 50%;
+    position: relative;
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .crescent:before {
+    content: "";
+    position: absolute;
+    width: 18vw;
+    height: 18vw;
+    background-color: white;
+    border-radius: 50%;
+    top: 3vw;
+    left: 4vw;
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .heart {
+    position: relative;
+    width: 18vw;
+    height: 18vw;
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .heart:before,
+  .heart:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 9vw;
+    height: 13vw;
+    background-color: gold;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    max-width: 75px;
+    max-height: 100px;
+  }
+  .heart:after {
+    left: 9vw;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="shape square"></div>
+  <div class="shape circle"></div>
+  <div class="shape rectangle"></div>
+  <div class="shape triangle"></div>
+  <div class="shape pentagon"></div>
+  <div class="shape oval"></div>
+  <div class="shape star"></div>
+  <div class="shape crescent"></div>
+  <div class="shape heart"></div>
+</div>
+
+</body>
+</html>

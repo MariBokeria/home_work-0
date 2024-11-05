@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <input type="text" id="textInput" placeholder="Enter text here">
+        <button onclick="addText()">Add Text</button>
+
+        <input type="color" id="colorInput">
+        <button onclick="changeColor()">Change Color</button>
+
+        <input type="number" id="sizeInput" placeholder="Enter font size (px)">
+        <button onclick="changeFontSize()">Change Font Size</button>
+
+        <div id="output">Sample Text</div>
+
+        <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
