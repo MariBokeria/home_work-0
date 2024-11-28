@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 300px;
+            font-size: 16px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Application</h1>
+    <form id="jobForm">
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" placeholder="Age" required>
+        
+        <label for="experience">Enter your years of experience:</label>
+        <input type="number" id="experience" placeholder="Experience" required>
+        
+        <button type="button" id="submitButton">Submit</button>
+    </form>
+
+    <script src="second.js"></script>
+</body>
+</html>
