@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>დავალება 3</title>
+</head>
+<body>
+
+  <ul id="numberList">
+    <li class="number">1</li>
+    <li class="number">2</li>
+    <li class="number">4</li>
+    <li class="number">8</li>
+    <li class="number">16</li>
+  </ul>
+
+  <script>
+    const numbers = document.getElementsByClassName('number');
+    let lastValue = 1;
+
+    for (let i = 0; i < numbers.length; i++) {
+      numbers[i].textContent = lastValue;
+      lastValue *= 2;
+    }
+  </script>
+
+</body>
+</html>

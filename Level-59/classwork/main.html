@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Formula Checker</title>
+</head>
+<body>
+    <h1>Logical Formula Checker</h1>
+    <p>Given: A = 1, B = 0, C = 0</p>
+
+    <button onclick="checkFormulas()">Check Formulas</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkFormulas() {
+            // Assign the values
+            let A = 1;
+            let B = 0;
+            let C = 0;
+
+            // Formula 1: (A && !B) || (B && !A)
+            let formula1 = (A && !B) || (B && !A);
+
+            // Formula 2: (B && C) && (A || B)
+            let formula2 = (B && C) && (A || B);
+
+            // Formula 3: (A && !C) || (B && !A) || (B && !C)
+            let formula3 = (A && !C) || (B && !A) || (B && !C);
+
+            // Display the results
+            let resultText = `
+                Formula 1: ${(formula1 ? "True" : "False")}<br>
+                Formula 2: ${(formula2 ? "True" : "False")}<br>
+                Formula 3: ${(formula3 ? "True" : "False")}
+            `;
+
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

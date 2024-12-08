@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Numbers</title>
+</head>
+<body>
+    <h1>Reverse Numbers from A to B</h1>
+
+    <label for="a">Enter A: </label>
+    <input type="number" id="a" required>
+    <br>
+    <label for="b">Enter B: </label>
+    <input type="number" id="b" required>
+    <br><br>
+    <button onclick="printReverse()">Print Reverse</button>
+
+    <p id="result"></p>
+
+    <script>
+        function printReverse() {
+            // Get inputs
+            const a = parseInt(document.getElementById("a").value);
+            const b = parseInt(document.getElementById("b").value);
+
+            // Validate inputs
+            if (isNaN(a) || isNaN(b)) {
+                alert("Please enter valid numbers for A and B.");
+                return;
+            }
+
+            // Determine the range and reverse order
+            let result = [];
+            if (a > b) {
+                for (let i = a; i >= b; i--) {
+                    result.push(i);
+                }
+            } else {
+                for (let i = b; i >= a; i--) {
+                    result.push(i);
+                }
+            }
+
+            // Display result
+            document.getElementById("result").innerText = `Reversed range: ${result.join(", ")}`;
+        }
+    </script>
+</body>
+</html>

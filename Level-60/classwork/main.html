@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>დავალება 1</title>
+</head>
+<body>
+
+  <p class="message">პ-თაგი 1</p>
+  <p class="message">პ-თაგი 2</p>
+  <p class="message">პ-თაგი 3</p>
+
+  <button onclick="changeText()">დაკლიკე</button>
+
+  <script>
+    function changeText() {
+      const paragraphs = document.getElementsByClassName('message');
+      for (let i = 0; i < paragraphs.length; i++) {
+        if (i % 2 === 0) {
+          paragraphs[i].textContent = 'გამარჯობათ';
+        } else {
+          paragraphs[i].textContent = 'ნახვამდის';
+        }
+      }
+    }
+  </script>
+  
+</body>
+</html>

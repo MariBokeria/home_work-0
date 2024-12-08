@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Input</title>
+</head>
+<body>
+    <h1>Enter N Numbers</h1>
+    <p>First, enter the number of elements (N), and then enter the numbers one by one.</p>
+
+    <label for="numCount">Enter N: </label>
+    <input type="number" id="numCount" min="1" required>
+    <button onclick="getNumbers()">Submit</button>
+
+    <div id="inputs"></div>
+    <button id="printArray" onclick="printArray()" style="display: none;">Print Array</button>
+    <p id="result"></p>
+
+    <script>
+        let numbers = [];
+
+        function getNumbers() {
+            // Clear previous inputs
+            numbers = [];
+            document.getElementById("inputs").innerHTML = "";
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("printArray").style.display = "none";
+
+            // Get the value of N
+            const n = parseInt(document.getElementById("numCount").value);
+            if (isNaN(n) || n <= 0) {
+                alert("Please enter a valid number greater than 0.");
+                return;
+            }
+
+            // Dynamically create input fields
+            const inputsDiv = document.getElementById("inputs");
+            for (let i = 0; i < n; i++) {
+                const input = document.createElement("input");
+                input.type = "number";
+                input.placeholder = `Enter number ${i + 1}`;
+                input.id = `num${i}`;
+                inputsDiv.appendChild(input);
+                inputsDiv.appendChild(document.createElement("br"));
+            }
+
+            // Show the "Print Array" button
+            document.getElementById("printArray").style.display = "inline-block";
+        }
+
+        function printArray() {
+            // Read numbers from input fields
+            const n = parseInt(document.getElementById("numCount").value);
+            numbers = [];
+            for (let i = 0; i < n; i++) {
+                const value = parseFloat(document.getElementById(`num${i}`).value);
+                if (isNaN(value)) {
+                    alert(`Please enter a valid number for input ${i + 1}.`);
+                    return;
+                }
+                numbers.push(value);
+            }
+
+            // Print the array
+            document.getElementById("result").innerText = `Your array: [${numbers.join(", ")}]`;
+        }
+    </script>
+</body>
+</html>

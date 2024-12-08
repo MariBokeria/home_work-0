@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>დავალება 2</title>
+</head>
+<body>
+
+  <button class="btn">ღილაკი 1</button>
+  <button class="btn">ღილაკი 2</button>
+  <button class="btn">ღილაკი 3</button>
+
+  <script>
+    const buttons = document.getElementsByClassName('btn');
+
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function() {
+        console.log(`button: ${i + 1}`);
+      });
+    }
+  </script>
+
+</body>
+</html>

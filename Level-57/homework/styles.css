@@ -88,5 +88,5 @@ button:not(.del):not(.reset):not(.equals) {
 }
 
 button:hover {
-    opacity: 0.8;
+    opacity: 0.8  ;
 }
