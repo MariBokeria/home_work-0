@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #text {
+            margin: 20px;
+            font-size: 1.5rem;
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Show Text</button>
+    <div id="text">Hello! This is the toggled text.</div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const textElement = document.getElementById('text');
+
+        toggleButton.addEventListener('click', () => {
+            if (textElement.style.display === 'none') {
+                textElement.style.display = 'block';
+                toggleButton.textContent = 'Hide Text';
+            } else {
+                textElement.style.display = 'none';
+                toggleButton.textContent = 'Show Text';
+            }
+        });
+    </script>
+</body>
+</html>
