@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylized Counter</title>
+    <style>
+        #counter {
+            font-size: 2em;
+            margin: 20px;
+            color: black;
+            transition: color 0.3s;
+        }
+        .positive {
+            color: green;
+        }
+        .negative {
+            color: red;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let count = 0;
+
+        function updateCounter() {
+            const counter = document.getElementById('counter');
+            counter.textContent = count;
+            if (count > 0) {
+                counter.className = 'positive';
+            } else if (count < 0) {
+                counter.className = 'negative';
+            } else {
+                counter.className = '';
+            }
+        }
+
+        document.getElementById('increment').addEventListener('click', () => {
+            count++;
+            updateCounter();
+        });
+
+        document.getElementById('decrement').addEventListener('click', () => {
+            count--;
+            updateCounter();
+        });
+
+        document.getElementById('reset').addEventListener('click', () => {
+            count = 0;
+            updateCounter();
+        });
+    </script>
+</body>
+</html>

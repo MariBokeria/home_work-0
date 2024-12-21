@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #counter {
+            font-size: 3em;
+            margin: 20px;
+            color: black;
+            transition: color 0.3s;
+        }
+        .positive {
+            color: green;
+        }
+        .negative {
+            color: red;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Styled Counter</h1>
+    <div id="counter">0</div>
+    <input type="number" id="step" placeholder="Enter step value" />
+    <br>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let count = 0;
+
+        function updateCounter() {
+            const counter = document.getElementById('counter');
+            counter.textContent = count;
+            if (count > 0) {
+                counter.className = 'positive';
+            } else if (count < 0) {
+                counter.className = 'negative';
+            } else {
+                counter.className = '';
+            }
+        }
+
+        document.getElementById('increment').addEventListener('click', () => {
+            const step = parseInt(document.getElementById('step').value) || 1;
+            count += step;
+            updateCounter();
+        });
+
+        document.getElementById('decrement').addEventListener('click', () => {
+            const step = parseInt(document.getElementById('step').value) || 1;
+            count -= step;
+            updateCounter();
+        });
+
+        document.getElementById('reset').addEventListener('click', () => {
+            count = 0;
+            updateCounter();
+        });
+    </script>
+</body>
+</html>

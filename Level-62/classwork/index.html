@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Text</title>
+    <style>
+        #message {
+            font-size: 2em;
+            transition: opacity 0.5s;
+        }
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">გამარჯობა</div>
+    <button id="toggle">Toggle</button>
+
+    <script>
+        let isVisible = true;
+
+        document.getElementById('toggle').addEventListener('click', () => {
+            const message = document.getElementById('message');
+            if (isVisible) {
+                message.textContent = 'ნახვამდის';
+                setTimeout(() => {
+                    message.classList.add('hidden');
+                    setTimeout(() => {
+                        message.textContent = 'გამარჯობა';
+                        message.classList.remove('hidden');
+                    }, 500);
+                }, 500);
+            }
+            isVisible = !isVisible;
+        });
+    </script>
+</body>
+</html>

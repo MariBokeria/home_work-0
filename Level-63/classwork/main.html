@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #score {
+            font-size: 2em;
+            margin: 20px;
+        }
+        #cookie {
+            cursor: pointer;
+            width: 150px;
+            transition: transform 0.2s;
+        }
+        #cookie:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    <h1>Cookie Clicker</h1>
+    <div id="score">0</div>
+    <img id="cookie" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Galleta_con_chispas_de_chocolate.svg" alt="Cookie" />
+
+    <script>
+        let score = 0;
+        let pointsPerClick = 1;
+
+        const scoreElement = document.getElementById('score');
+        const cookie = document.getElementById('cookie');
+
+        cookie.addEventListener('click', () => {
+            score += pointsPerClick;
+            scoreElement.textContent = score;
+
+            if (score % 100 === 0) {
+                pointsPerClick *= 2;
+            }
+        });
+    </script>
+</body>
+</html>
