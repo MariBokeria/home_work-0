@@ -1,17 +1,23 @@
 function twoSum(nums, target) {
-    // Loop through each number in the array
-    for (let i = 0; i < nums.length; i++) {
-      // Loop through the remaining numbers to check for a match
-      for (let j = i + 1; j < nums.length; j++) {
-        // Check if the two numbers add up to the target
-        if (nums[i] + nums[j] === target) {
-          return [i, j]; // Return their indices
-        }
-      }
+  // შექმენით ობიექტი, რათა მოვამზადოთ თითოეული ელემენტის ინდექსები
+  let numMap = new Map();
+  
+  // გაიარეთ რიცხვების მასივზე
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+    
+    // თუ ჩანაცვლების რიცხვი უკვე არსებობს, დაბრუნეთ შედეგი
+    if (numMap.has(complement)) {
+      return [numMap.get(complement), i];
     }
+    
+    // დაამატეთ ამჟამინდელი რიცხვი მახსოვრობაზე
+    numMap.set(nums[i], i);
   }
-  
-  // Test cases
-  console.log(twoSum([1, 2, 3], 4));  // [0, 2] or [2, 0]
-  console.log(twoSum([3, 2, 4], 6));  // [1, 2] or [2, 1]
-  
+
+  return [];  // თუ ვერ მოიძებნა, დაბრუნდება ცარიელი მასივი
+}
+
+// ტესტი
+console.log(twoSum([1, 2, 3], 4));  // [0, 2] 
+console.log(twoSum([3, 2, 4], 6));  // [1, 2]
