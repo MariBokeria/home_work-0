@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>რიცხვები და ასოები</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        #output {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>რიცხვები და ასოები</h1>
+
+    <div>
+        <input type="radio" id="number" name="option" value="number" checked>
+        <label for="number">რიცხვი</label>
+        
+        <input type="radio" id="letter" name="option" value="letter">
+        <label for="letter">ასო</label>
+    </div>
+
+    <div class="container">
+        <button onclick="startGenerating()">გასტარტვა</button>
+        <button onclick="stopGenerating()">გაჩერება</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        let interval;
+
+        function startGenerating() {
+            stopGenerating(); // თავიდან ვწყვეტთ რომ არ გაორმაგდეს
+            interval = setInterval(() => {
+                let option = document.querySelector('input[name="option"]:checked').value;
+                let output = document.getElementById("output");
+
+                if (option === "number") {
+                    output.textContent = Math.floor(Math.random() * 100) + 1;
+                } else {
+                    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                    output.textContent = letters[Math.floor(Math.random() * letters.length)];
+                }
+            }, 1000);
+        }
+
+        function stopGenerating() {
+            clearInterval(interval);
+        }
+    </script>
+
+</body>
+</html>

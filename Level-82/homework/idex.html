@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ტაიმერი</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            width: 100px;
+            padding: 5px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #output {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ტაიმერი</h1>
+
+    <label for="timeInput">შეიყვანე დრო (მილიწამებში): </label>
+    <input type="number" id="timeInput" min="0" max="10000" value="5000"> 
+    <br><br>
+
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+
+    <div id="output"></div>
+
+    <script>
+        let interval;
+        let count = 1;
+        let endTime = 0;
+
+        function startTimer() {
+            stopTimer(); // თავიდან ვწყვეტთ პროცესს, რომ თავიდან არ გაორმაგდეს
+
+            let inputTime = parseInt(document.getElementById("timeInput").value);
+            
+            if (inputTime < 1000 || inputTime > 10000) {
+                alert("შეიყვანეთ დრო 1000-დან 10000-მდე!");
+                return;
+            }
+
+            endTime = inputTime / 1000; // გადაგვყავს წამებში
+            count = 1; // ვიწყებთ 1-იდან
+            document.getElementById("output").textContent = count;
+
+            interval = setInterval(() => {
+                if (count < endTime) {
+                    count++;
+                    document.getElementById("output").textContent = count;
+                } else {
+                    clearInterval(interval);
+                    document.getElementById("output").textContent = "Time's up!";
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(interval);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>შეტყობინების ტაიმერი</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, textarea {
+            width: 200px;
+            padding: 5px;
+            font-size: 1rem;
+            margin: 5px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #output {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>შეტყობინების ტაიმერი</h1>
+
+    <label for="timeInput">შეიყვანე დრო (მილიწამებში):</label><br>
+    <input type="number" id="timeInput" min="1000" max="10000" value="3000"><br><br>
+
+    <label for="messageInput">შეიყვანე მესიჯი:</label><br>
+    <textarea id="messageInput" rows="3"></textarea><br><br>
+
+    <button onclick="startTimer()">Start</button>
+    <button onclick="clearMessage()">Clear</button>
+
+    <div id="output"></div>
+
+    <script>
+        function startTimer() {
+            let time = parseInt(document.getElementById("timeInput").value);
+            let message = document.getElementById("messageInput").value;
+            let output = document.getElementById("output");
+
+            if (time < 1000 || time > 10000) {
+                alert("გთხოვთ შეიყვანოთ დრო 1000-დან 10000-მდე!");
+                return;
+            }
+
+            if (message.trim() === "") {
+                alert("გთხოვთ შეიყვანოთ მესიჯი!");
+                return;
+            }
+
+            output.textContent = "დაელოდეთ...";
+            setTimeout(() => {
+                output.textContent = message;
+            }, time);
+        }
+
+        function clearMessage() {
+            document.getElementById("output").textContent = "";
+            document.getElementById("messageInput").value = "";
+            document.getElementById("timeInput").value = "3000";
+        }
+    </script>
+
+</body>
+</html>
