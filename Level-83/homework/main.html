@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ციფრული საათი</title>
+    <style>
+        /* მთლიანი გვერდის სტილი */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black; /* შავი ფონი */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* საათის კონტეინერი */
+        .clock {
+            display: flex;
+            font-size: 80px; /* ციფრების ზომა */
+            font-weight: bold;
+            color: white; /* თეთრი ტექსტი */
+        }
+        
+        /* ციფრების ბლოკი */
+        .digit {
+            background-color: #222; /* მუქი ნაცრისფერი ბლოკი */
+            padding: 20px 30px;
+            margin: 5px;
+            border-radius: 10px; /* მომრგვალებული კუთხეები */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- საათის კონტეინერი, რომელიც აჩვენებს საათს, წუთებს და წამებს -->
+    <div class="clock">
+        <div class="digit" id="hours">00</div> <!-- საათი -->
+        <div class="digit" id="minutes">00</div> <!-- წუთები -->
+        <div class="digit" id="seconds">00</div> <!-- წამები -->
+    </div>
+
+    <script>
+        // ფუნქცია, რომელიც აახლებს საათს
+        function updateClock() {
+            const now = new Date(); // დროის ამოღება მიმდინარე სისტემიდან
+            const hours = String(now.getHours()).padStart(2, '0'); // საათების ფორმატირება 00-დან 23-მდე
+            const minutes = String(now.getMinutes()).padStart(2, '0'); // წუთების ფორმატირება 00-დან 59-მდე
+            const seconds = String(now.getSeconds()).padStart(2, '0'); // წამების ფორმატირება 00-დან 59-მდე
+
+            // საათის განახლება HTML ელემენტებში
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        // ყოველ წამს განაახლებს დროს
+        setInterval(updateClock, 1000);
+
+        // რომ გვერდის ჩატვირთვისას დრო არ იყოს 00:00:00
+        updateClock();
+    </script>
+
+</body>
+</html>
