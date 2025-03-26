@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .mission-list {
+            margin-top: 20px;
+        }
+        .mission-item {
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mission List</h1>
+    
+    <!-- ფორმა და ღილაკი -->
+    <div class="container">
+        <input type="text" id="missionInput" placeholder="შეიყვანეთ ახალი მისია">
+        <button onclick="addMission()">დამატება</button>
+    </div>
+    
+    <!-- მისიის სიას კონტეინერი -->
+    <div class="mission-list" id="missionList"></div>
+
+    <script>
+        // Function to add a new mission
+        function addMission() {
+            // მივიღებთ მომხმარებლის შეყვანილ მონაცემებს
+            const missionText = document.getElementById('missionInput').value;
+
+            // თუ მნიშვნელობა არ არის სუსტი, დავსახავთ ახალი მისიის ელემენტს
+            if (missionText.trim() !== "") {
+                // კონტეინერიდან ახალ ელემენტად შევქმნით div-ს
+                const missionDiv = document.createElement('div');
+                missionDiv.classList.add('mission-item');
+                missionDiv.textContent = missionText;
+
+                // დავამატოთ მისია სიაში, ჯერ თავში
+                const missionList = document.getElementById('missionList');
+                missionList.insertBefore(missionDiv, missionList.firstChild);
+
+                // დავასუფთაოთ input მინდორი
+                document.getElementById('missionInput').value = '';
+            } else {
+                alert('გთხოვთ, შეიყვანოთ ვალიდური მისია!');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Squares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .color-square {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Squares Based on Last Digit</h1>
+    
+    <!-- ფორმა და ღილაკი -->
+    <div class="container">
+        <input type="number" id="numberInput" placeholder="შეიყვანეთ რიცხვი">
+        <button onclick="addColorSquare()">დამატება</button>
+    </div>
+    
+    <!-- კვადრატების კონტეინერი -->
+    <div class="color-squares" id="colorSquares"></div>
+
+    <script>
+        // ფუნქცია ციფრის ბოლო ნაწილის მიხედვით ფერის კვადრატის დამატებისთვის
+        function addColorSquare() {
+            // მივიღებთ მომხმარებლის შეყვანილ რიცხვს
+            const number = document.getElementById('numberInput').value;
+
+            // შევამოწმოთ, თუ რიცხვი არის ვალიდური
+            if (number.trim() !== "") {
+                // რიცხვი და მისი ბოლო ციფრი
+                const lastDigit = number[number.length - 1];
+
+                // შევქმნათ div, რომელიც იქნება კვადრატის სახით
+                const squareDiv = document.createElement('div');
+                squareDiv.classList.add('color-square');
+
+                // სხვადასხვა ფერი, რომელიც შეესაბამება ბოლო ციფრს
+                switch (lastDigit) {
+                    case '1':
+                        squareDiv.style.backgroundColor = 'red'; // წითელი
+                        break;
+                    case '2':
+                        squareDiv.style.backgroundColor = 'green'; // მწვანე
+                        break;
+                    case '3':
+                        squareDiv.style.backgroundColor = 'blue'; // ლურჯი
+                        break;
+                    case '4':
+                        squareDiv.style.backgroundColor = 'yellow'; // ყვითელი
+                        break;
+                    case '5':
+                        squareDiv.style.backgroundColor = 'orange'; // ფორთოხლისფერი
+                        break;
+                    case '6':
+                        squareDiv.style.backgroundColor = 'purple'; // იისფერი
+                        break;
+                    case '7':
+                        squareDiv.style.backgroundColor = 'pink'; // ვარდისფერი
+                        break;
+                    case '8':
+                        squareDiv.style.backgroundColor = 'brown'; // ყავისფერი
+                        break;
+                    case '9':
+                        squareDiv.style.backgroundColor = 'gray'; // ნაცრისფერი
+                        break;
+                    case '0':
+                        squareDiv.style.backgroundColor = 'black'; // შავი
+                        break;
+                    default:
+                        squareDiv.style.backgroundColor = 'white'; // ყუითელი, თუ სხვანაირად მოხდა
+                        break;
+                }
+
+                // დაამატეთ ახალი კვადრატი კონტეინერში ბოლოში
+                const colorSquaresContainer = document.getElementById('colorSquares');
+                colorSquaresContainer.appendChild(squareDiv);
+
+                // დავასუფთაოთ input ველი
+                document.getElementById('numberInput').value = '';
+            } else {
+                alert('გთხოვთ, შეიყვანოთ ვალიდური რიცხვი!');
+            }
+        }
+    </script>
+</body>
+</html>

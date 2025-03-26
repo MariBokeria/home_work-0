@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Addition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .shape {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+        .circle {
+            border-radius: 50%;
+            background-color: blue;
+        }
+        .square {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shape Addition Based on Number</h1>
+    
+    <!-- ფორმა და ღილაკი -->
+    <div class="container">
+        <input type="number" id="numberInput" placeholder="შეიყვანეთ რიცხვი">
+        <button onclick="addShape()">დამატება</button>
+    </div>
+    
+    <!-- ფორმის შედეგების კონტეინერი -->
+    <div class="shapes" id="shapesContainer"></div>
+
+    <script>
+        // ფუნქცია ფორმის დასამატებლად
+        function addShape() {
+            const number = document.getElementById('numberInput').value;
+
+            // შევამოწმოთ, თუ რიცხვი არის ვალიდური
+            if (number.trim() !== "") {
+                const shapeDiv = document.createElement('div');
+                shapeDiv.classList.add('shape');
+
+                // თუ რიცხვი ლუწია, დაამატეთ ლურჯი წრე
+                if (parseInt(number) % 2 === 0) {
+                    shapeDiv.classList.add('circle');
+                    // დაამატეთ კონტეინერის ბოლოში
+                    document.getElementById('shapesContainer').appendChild(shapeDiv);
+                } 
+                // თუ რიცხვი კენტია, დაამატეთ წითელი კვადრატი
+                else {
+                    shapeDiv.classList.add('square');
+                    // დაამატეთ კონტეინერის თავში
+                    const container = document.getElementById('shapesContainer');
+                    container.insertBefore(shapeDiv, container.firstChild);
+                }
+
+                // დავასუფთაოთ input ველი
+                document.getElementById('numberInput').value = '';
+            } else {
+                alert('გთხოვთ, შეიყვანოთ ვალიდური რიცხვი!');
+            }
+        }
+    </script>
+</body>
+</html>

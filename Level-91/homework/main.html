@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Addition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .number-list {
+            margin-top: 20px;
+        }
+        .number-item {
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Number Addition</h1>
+    
+    <!-- ფორმა და ღილაკი -->
+    <div class="container">
+        <input type="number" id="numberInput" placeholder="შეიყვანეთ რიცხვი">
+        <button onclick="addNumber()">დამატება</button>
+    </div>
+    
+    <!-- რიცხვების სიას კონტეინერი -->
+    <div class="number-list" id="numberList"></div>
+
+    <script>
+        // ფუნქცია რიცხვის დასამატებლად
+        function addNumber() {
+            // მივიღებთ მომხმარებლის შეყვანილ რიცხვს
+            const number = document.getElementById('numberInput').value;
+
+            // თუ რიცხვი არ არის ცარიელი და სწორი
+            if (number.trim() !== "") {
+                // შევქმნათ ახალი დივი, რომელიც შეიცავს რიცხვს
+                const numberDiv = document.createElement('div');
+                numberDiv.classList.add('number-item');
+                numberDiv.textContent = number;
+
+                // შეამოწმეთ, თუ რიცხვი მეტია 20-ზე
+                const numberList = document.getElementById('numberList');
+                if (parseInt(number) > 20) {
+                    // თუ რიცხვი მეტია 20-ზე, დაამატეთ ბოლოში
+                    numberList.appendChild(numberDiv);
+                } else {
+                    // თუ რიცხვი ნაკლებია ან 20-ზე, დაამატეთ თავში
+                    numberList.insertBefore(numberDiv, numberList.firstChild);
+                }
+
+                // დავასუფთაოთ input ველი
+                document.getElementById('numberInput').value = '';
+            } else {
+                alert('გთხოვთ, შეიყვანოთ ვალიდური რიცხვი!');
+            }
+        }
+    </script>
+</body>
+</html>
