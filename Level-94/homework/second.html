@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colorful Children</title>
+  <style>
+    .container {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .child {
+      width: 80px;
+      height: 80px;
+      background-color: gray;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="myContainer">
+  <div class="child">1</div>
+  <div class="child">2</div>
+  <div class="child">3</div>
+  <div class="child">4</div>
+  <div class="child">5</div>
+</div>
+
+<script>
+  const colors = ['red', 'green', 'blue', 'orange', 'purple'];
+  const children = document.querySelectorAll('#myContainer .child');
+
+  for (let i = 0; i < children.length; i++) {
+    children[i].style.backgroundColor = colors[i % colors.length];
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highlight Child</title>
+  <style>
+    .container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .child {
+      width: 80px;
+      height: 80px;
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .highlight {
+      background-color: coral !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="parent">
+  <div class="child">1</div>
+  <div class="child">2</div>
+  <div class="child">3</div>
+  <div class="child">4</div>
+</div>
+
+<input type="number" id="childNumber" placeholder="Enter child number">
+<button onclick="highlightChild()">Highlight</button>
+
+<script>
+  function highlightChild() {
+    const number = parseInt(document.getElementById('childNumber').value);
+    const children = document.querySelectorAll('#parent .child');
+
+    // Remove previous highlight
+    children.forEach(child => child.classList.remove('highlight'));
+
+    // Check if valid number
+    if (number >= 1 && number <= children.length) {
+      children[number - 1].classList.add('highlight');
+    } else {
+      alert('Invalid number!');
+    }
+  }
+</script>
+
+</body>
+</html>

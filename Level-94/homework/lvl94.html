@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highlight First Paragraph</title>
+  <style>
+    .container p {
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .highlight {
+      color: white;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="textContainer">
+  <p>პირველი პარაგრაფი</p>
+  <p>მეორე პარაგრაფი</p>
+  <p>მესამე პარაგრაფი</p>
+</div>
+
+<button onclick="highlightFirstP()">Highlight First P</button>
+
+<script>
+  function highlightFirstP() {
+    const container = document.getElementById('textContainer');
+    const firstParagraph = container.children[0];
+    firstParagraph.classList.add('highlight');
+  }
+</script>
+
+</body>
+</html>
