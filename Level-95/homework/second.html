@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>მოძრავი ელემენტი</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: crimson;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      transition: all linear;
+    }
+    #controls {
+      margin: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div id="controls">
+  <input type="number" id="durationInput" placeholder="შეიყვანე დრო წამებში">
+  <button id="startButton">დაწყება</button>
+</div>
+
+<div id="box"></div>
+
+<script>
+  const box = document.getElementById('box');
+  const startButton = document.getElementById('startButton');
+  const durationInput = document.getElementById('durationInput');
+
+  startButton.addEventListener('click', () => {
+    const duration = parseFloat(durationInput.value);
+
+    if (isNaN(duration) || duration <= 0) {
+      alert('გთხოვ, შეიყვანე სწორი დრო!');
+      return;
+    }
+
+    const partDuration = (duration * 1000) / 4; // გაყოფილი ოთხ ნაწილად
+
+    // მარჯვნივ
+    box.style.transition = `all ${partDuration / 1000}s linear`;
+    box.style.left = '400px';
+
+    setTimeout(() => {
+      // ქვემოთ
+      box.style.top = '400px';
+    }, partDuration);
+
+    setTimeout(() => {
+      // მარცხნივ
+      box.style.left = '100px';
+    }, partDuration * 2);
+
+    setTimeout(() => {
+      // ზევით (საწყის ადგილზე დაბრუნება)
+      box.style.top = '100px';
+    }, partDuration * 3);
+  });
+</script>
+
+</body>
+</html>

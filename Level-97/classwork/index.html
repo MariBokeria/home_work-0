@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Monitoring</title>
+</head>
+<body>
+
+  <input type="text" id="myInput" placeholder="აკრიფე ტექსტი...">
+
+  <script>
+    const input = document.getElementById('myInput');
+
+    let previousLength = 0;
+    let added = 0;
+    let deleted = 0;
+
+    input.addEventListener('input', () => {
+      const currentLength = input.value.length;
+
+      if (currentLength > previousLength) {
+        added += currentLength - previousLength;
+        console.log(`დამატებული ასოები: ${added}`);
+      } else if (currentLength < previousLength) {
+        deleted += previousLength - currentLength;
+        console.log(`წაშლილი ასოები: ${deleted}`);
+      }
+
+      previousLength = currentLength;
+    });
+  </script>
+
+</body>
+</html>

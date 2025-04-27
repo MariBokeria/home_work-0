@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      transition: background-color 0.5s ease; /* გლუვი გადასვლა ფონის შეცვლისას */
+    }
+    #formContainer {
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      border: 2px solid gray;
+      border-radius: 10px;
+      text-align: center;
+      background-color: white;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="formContainer">
+  <h2>რეგისტრაციის ფორმა</h2>
+  <input type="text" id="nameInput" placeholder="შეიყვანეთ სახელი">
+  <input type="number" id="ageInput" placeholder="შეიყვანეთ ასაკი">
+  <button id="submitButton">დადასტურება</button>
+</div>
+
+<script>
+  const submitButton = document.getElementById('submitButton');
+  const ageInput = document.getElementById('ageInput');
+
+  submitButton.addEventListener('click', function() {
+    const age = parseInt(ageInput.value); // ასაკის მიღება და რიცხვად ქცევა
+
+    if (isNaN(age)) {
+      alert('გთხოვთ, შეიყვანეთ სწორი ასაკი!');
+      return;
+    }
+
+    if (age > 18) {
+      document.body.style.backgroundColor = 'lightgreen'; // მწვანე ფონი
+    } else {
+      document.body.style.backgroundColor = 'lightcoral'; // წითელი ფონი
+    }
+  });
+</script>
+
+</body>
+</html>

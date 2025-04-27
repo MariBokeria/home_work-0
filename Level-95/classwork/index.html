@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>დივი ანიმაცია</title>
+  <style>
+    #myDiv {
+      width: 200px;
+      height: 200px;
+      background-color: teal;
+      transition: opacity 1s ease;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="myDiv"></div>
+
+<script>
+  const div = document.getElementById('myDiv');
+
+  function handleClick() {
+    // მოვაშოროთ ივენთ ლისენერი
+    div.removeEventListener('click', handleClick);
+
+    // 1. გავაქროთ დივი 1 წამში
+    div.style.opacity = '0';
+
+    // 2. ერთი წამის შემდეგ (ანიმაციის დასრულების შემდეგ)
+    setTimeout(() => {
+      // 3. დაველოდოთ კიდევ 1 წამი (სრული გაუჩინარება)
+      setTimeout(() => {
+        // 4. გავაჩინოთ დივი 1 წამში
+        div.style.opacity = '1';
+
+        // 5. დავამატოთ ისევ click listener, როცა დასრულდება გამოჩენა
+        setTimeout(() => {
+          div.addEventListener('click', handleClick);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }
+
+  div.addEventListener('click', handleClick);
+</script>
+
+</body>
+</html>

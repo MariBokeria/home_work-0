@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme Toggle</title>
+  <style>
+    body {
+      transition: background-color 0.5s, color 0.5s;
+      background-color: white;
+      color: black;
+    }
+
+    .dark {
+      background-color: #121212;
+      color: white;
+    }
+
+    #toggleButton {
+      margin: 50px auto;
+      display: block;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button id="toggleButton">შეცვალე თემა</button>
+
+<script>
+  const button = document.getElementById('toggleButton');
+  const body = document.body;
+
+  button.addEventListener('click', function() {
+    body.classList.toggle('dark'); 
+    // თუ 'dark' კლასი არის - მოაშორებს, თუ არ არის - დაამატებს
+  });
+</script>
+
+</body>
+</html>

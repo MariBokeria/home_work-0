@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Event Example</title>
+  <style>
+    .new-div {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="addButton">დაამატე ახალი ელემენტი</button>
+
+<script>
+  const button = document.getElementById('addButton');
+
+  button.addEventListener('click', function() {
+    const newDiv = document.createElement('div');
+    newDiv.className = 'new-div';
+    newDiv.textContent = 'ახალი ელემენტი!';
+    document.body.appendChild(newDiv);
+  });
+</script>
+
+</body>
+</html>

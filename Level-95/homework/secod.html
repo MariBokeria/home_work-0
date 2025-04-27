@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing ეფექტი</title>
+  <style>
+    #output {
+      font-size: 24px;
+      font-family: monospace;
+      margin-top: 20px;
+      white-space: pre;
+    }
+    #controls {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="controls">
+  <input type="text" id="textInput" placeholder="შეიყვანე ტექსტი">
+  <button id="startButton">დაწყება</button>
+  <div id="output"></div>
+</div>
+
+<script>
+  const textInput = document.getElementById('textInput');
+  const startButton = document.getElementById('startButton');
+  const output = document.getElementById('output');
+
+  startButton.addEventListener('click', () => {
+    const text = textInput.value;
+    output.textContent = '';
+    
+    let index = 0;
+    
+    function typeLetter() {
+      if (index < text.length) {
+        output.textContent += text[index];
+        index++;
+        setTimeout(typeLetter, 150); // ასოების სიჩქარე (150 მილიწამი)
+      }
+    }
+    
+    typeLetter();
+  });
+</script>
+
+</body>
+</html>

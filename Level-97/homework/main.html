@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ფონის ფერის შეცვლა</title>
+  <style>
+    body {
+      transition: background-color 0.5s ease; /* გლუვი გადასვლა ფერის შეცვლისას */
+    }
+    #colorInput {
+      margin: 100px auto;
+      display: block;
+      padding: 10px;
+      width: 200px;
+      font-size: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="colorInput" placeholder="შეიყვანე ფერი (red, blue...)">
+
+<script>
+  const colorInput = document.getElementById('colorInput');
+
+  // input ველში ცვლილებისას
+  colorInput.addEventListener('input', function() {
+    const color = colorInput.value; // ვიღებთ შეყვანილ მნიშვნელობას
+    document.body.style.backgroundColor = color; // ვცვლით body-ს ფონს
+  });
+</script>
+
+</body>
+</html>
