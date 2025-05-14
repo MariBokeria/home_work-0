@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>მშობელი და შვილი click</title>
+  <style>
+    #parent {
+      padding: 30px;
+      background-color: lightblue;
+    }
+
+    #child {
+      padding: 20px;
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="parent">
+    მშობელი
+    <div id="child">შვილი</div>
+  </div>
+
+  <script>
+    function handleClick() {
+      console.log('დამუშავდა click მოვლენა');
+    }
+
+    document.getElementById('parent').addEventListener('click', handleClick);
+    document.getElementById('child').addEventListener('click', handleClick);
+  </script>
+
+</body>
+</html>

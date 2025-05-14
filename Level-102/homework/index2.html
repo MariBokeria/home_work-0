@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ღილაკი და body click</title>
+</head>
+<body>
+
+  <button id="myButton">დაკლიკე მე</button>
+
+  <script>
+    // ღილაკზე click
+    document.getElementById('myButton').addEventListener('click', function () {
+      console.log('ღილაკზე დაჭერა');
+    });
+
+    // body-ზე click
+    document.body.addEventListener('click', function () {
+      console.log('body-ზე დაჭერა');
+    });
+  </script>
+
+</body>
+</html>

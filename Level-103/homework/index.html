@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Image Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slider-images {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slider-images img {
+      width: 100%;
+      height: auto;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Image Slider</h1>
+
+  <div class="slider-container">
+    <div class="slider-images">
+      <img src="https://via.placeholder.com/600x300?text=Image+1" alt="Image 1">
+      <img src="https://via.placeholder.com/600x300?text=Image+2" alt="Image 2">
+      <img src="https://via.placeholder.com/600x300?text=Image+3" alt="Image 3">
+      <img src="https://via.placeholder.com/600x300?text=Image+4" alt="Image 4">
+      <img src="https://via.placeholder.com/600x300?text=Image+5" alt="Image 5">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.slider-images img');
+    const totalImages = images.length;
+    const slider = document.querySelector('.slider-images');
+
+    document.querySelector('.next').addEventListener('click', () => {
+      if (currentIndex < totalImages - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Restart to first image
+      }
+      updateSliderPosition();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = totalImages - 1; 
+      }
+      updateSliderPosition();
+    });
+
+    function updateSliderPosition() {
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
+
+</body>
+</html>

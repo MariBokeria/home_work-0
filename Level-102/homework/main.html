@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ჩაშენებული div-ები და click</title>
+  <style>
+    #outer {
+      padding: 50px;
+      background-color: lightcoral;
+    }
+
+    #middle {
+      padding: 40px;
+      background-color: lightblue;
+    }
+
+    #inner {
+      padding: 30px;
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="outer">
+    Outer
+    <div id="middle">
+      Middle
+      <div id="inner">
+        Inner
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('outer').addEventListener('click', function () {
+      console.log('Outer div clicked');
+    });
+
+    document.getElementById('middle').addEventListener('click', function () {
+      console.log('Middle div clicked');
+    });
+
+    document.getElementById('inner').addEventListener('click', function () {
+      console.log('Inner div clicked');
+    });
+  </script>
+
+</body>
+</html>

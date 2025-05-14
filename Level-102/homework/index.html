@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Click მოვლენა</title>
+</head>
+<body>
+
+  <div id="parent" style="padding: 30px; background-color: lightgray;">
+    <button id="child">დაკლიკე მე</button>
+  </div>
+
+  <script>
+    const parent = document.getElementById('parent');
+    const button = document.getElementById('child');
+
+    parent.addEventListener('click', function(event) {
+      console.log("დაკლიკდა მშობელზე (div)");
+      console.log("მოვლენა:", event);
+    });
+
+    button.addEventListener('click', function(event) {
+      console.log("დაკლიკდა ღილაკზე (button)");
+      console.log("მოვლენა:", event);
+    });
+  </script>
+
+</body>
+</html>
